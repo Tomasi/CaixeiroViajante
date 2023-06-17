@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v7.0": {
       "CaixeiroViajante/1.0.0": {
         "dependencies": {
-          "EPPlus": "6.2.5"
+          "EPPlus": "6.2.5",
+          "GeneticSharp": "3.1.4"
         },
         "runtime": {
           "CaixeiroViajante.dll": {}
@@ -47,6 +48,18 @@
           "lib/net7.0/EPPlus.System.Drawing.dll": {
             "assemblyVersion": "6.1.1.0",
             "fileVersion": "6.1.1.0"
+          }
+        }
+      },
+      "GeneticSharp/3.1.4": {
+        "runtime": {
+          "lib/net6.0/GeneticSharp.Domain.dll": {
+            "assemblyVersion": "3.1.4.0",
+            "fileVersion": "3.1.4.0"
+          },
+          "lib/net6.0/GeneticSharp.Infrastructure.Framework.dll": {
+            "assemblyVersion": "3.1.4.0",
+            "fileVersion": "3.1.4.0"
           }
         }
       },
@@ -241,6 +254,13 @@
       "sha512": "sha512-lRF5gHYrmkHOOiLMI0t6q8zNYjUrzRgAM5BCXumv5xiqXko8fx3AWI+HCNZfhEqVFGOop+42KfR5GiUcCoyoMw==",
       "path": "epplus.system.drawing/6.1.1",
       "hashPath": "epplus.system.drawing.6.1.1.nupkg.sha512"
+    },
+    "GeneticSharp/3.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-U7NfUCVoiX0tKl6uvN7QGj6rHiM+jWRip+SbWYwG8RqZZcTwCBWO5IPwgKhSnh0vjV/LzRMUBEuSiZKAPl6I+Q==",
+      "path": "geneticsharp/3.1.4",
+      "hashPath": "geneticsharp.3.1.4.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration/7.0.0": {
       "type": "package",

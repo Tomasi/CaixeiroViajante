@@ -1,3 +1,8 @@
+C:\Users\igort\Documents\CaixeiroViajante\obj\Debug\net7.0\CaixeiroViajante.csproj.AssemblyReference.cache
+C:\Users\igort\Documents\CaixeiroViajante\obj\Debug\net7.0\CaixeiroViajante.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\igort\Documents\CaixeiroViajante\obj\Debug\net7.0\CaixeiroViajante.AssemblyInfoInputs.cache
+C:\Users\igort\Documents\CaixeiroViajante\obj\Debug\net7.0\CaixeiroViajante.AssemblyInfo.cs
+C:\Users\igort\Documents\CaixeiroViajante\obj\Debug\net7.0\CaixeiroViajante.csproj.CoreCompileInputs.cache
 C:\Users\igort\Documents\CaixeiroViajante\bin\Debug\net7.0\CaixeiroViajante.exe
 C:\Users\igort\Documents\CaixeiroViajante\bin\Debug\net7.0\CaixeiroViajante.deps.json
 C:\Users\igort\Documents\CaixeiroViajante\bin\Debug\net7.0\CaixeiroViajante.runtimeconfig.json
@@ -6,6 +11,8 @@ C:\Users\igort\Documents\CaixeiroViajante\bin\Debug\net7.0\CaixeiroViajante.pdb
 C:\Users\igort\Documents\CaixeiroViajante\bin\Debug\net7.0\EPPlus.dll
 C:\Users\igort\Documents\CaixeiroViajante\bin\Debug\net7.0\EPPlus.Interfaces.dll
 C:\Users\igort\Documents\CaixeiroViajante\bin\Debug\net7.0\EPPlus.System.Drawing.dll
+C:\Users\igort\Documents\CaixeiroViajante\bin\Debug\net7.0\GeneticSharp.Domain.dll
+C:\Users\igort\Documents\CaixeiroViajante\bin\Debug\net7.0\GeneticSharp.Infrastructure.Framework.dll
 C:\Users\igort\Documents\CaixeiroViajante\bin\Debug\net7.0\Microsoft.Extensions.Configuration.dll
 C:\Users\igort\Documents\CaixeiroViajante\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\igort\Documents\CaixeiroViajante\bin\Debug\net7.0\Microsoft.Extensions.Configuration.FileExtensions.dll
@@ -21,11 +28,6 @@ C:\Users\igort\Documents\CaixeiroViajante\bin\Debug\net7.0\System.Security.Crypt
 C:\Users\igort\Documents\CaixeiroViajante\bin\Debug\net7.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\igort\Documents\CaixeiroViajante\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\Users\igort\Documents\CaixeiroViajante\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
-C:\Users\igort\Documents\CaixeiroViajante\obj\Debug\net7.0\CaixeiroViajante.csproj.AssemblyReference.cache
-C:\Users\igort\Documents\CaixeiroViajante\obj\Debug\net7.0\CaixeiroViajante.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\igort\Documents\CaixeiroViajante\obj\Debug\net7.0\CaixeiroViajante.AssemblyInfoInputs.cache
-C:\Users\igort\Documents\CaixeiroViajante\obj\Debug\net7.0\CaixeiroViajante.AssemblyInfo.cs
-C:\Users\igort\Documents\CaixeiroViajante\obj\Debug\net7.0\CaixeiroViajante.csproj.CoreCompileInputs.cache
 C:\Users\igort\Documents\CaixeiroViajante\obj\Debug\net7.0\CaixeiroViajante.csproj.CopyComplete
 C:\Users\igort\Documents\CaixeiroViajante\obj\Debug\net7.0\CaixeiroViajante.dll
 C:\Users\igort\Documents\CaixeiroViajante\obj\Debug\net7.0\refint\CaixeiroViajante.dll

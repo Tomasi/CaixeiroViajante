@@ -45,6 +45,17 @@
           "lib/net7.0/EPPlus.System.Drawing.dll": {}
         }
       },
+      "GeneticSharp/3.1.4": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/GeneticSharp.Domain.dll": {},
+          "lib/net6.0/GeneticSharp.Infrastructure.Framework.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/GeneticSharp.Domain.dll": {},
+          "lib/net6.0/GeneticSharp.Infrastructure.Framework.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -434,6 +445,19 @@
         "lib/netstandard2.1/EPPlus.System.Drawing.dll",
         "license.md",
         "readme.md"
+      ]
+    },
+    "GeneticSharp/3.1.4": {
+      "sha512": "U7NfUCVoiX0tKl6uvN7QGj6rHiM+jWRip+SbWYwG8RqZZcTwCBWO5IPwgKhSnh0vjV/LzRMUBEuSiZKAPl6I+Q==",
+      "type": "package",
+      "path": "geneticsharp/3.1.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "geneticsharp.3.1.4.nupkg.sha512",
+        "geneticsharp.nuspec",
+        "lib/net6.0/GeneticSharp.Domain.dll",
+        "lib/net6.0/GeneticSharp.Infrastructure.Framework.dll"
       ]
     },
     "Microsoft.Extensions.Configuration/7.0.0": {
@@ -946,7 +970,8 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "EPPlus >= 6.2.5"
+      "EPPlus >= 6.2.5",
+      "GeneticSharp >= 3.1.4"
     ]
   },
   "packageFolders": {
@@ -996,6 +1021,10 @@
           "EPPlus": {
             "target": "Package",
             "version": "[6.2.5, )"
+          },
+          "GeneticSharp": {
+            "target": "Package",
+            "version": "[3.1.4, )"
           }
         },
         "imports": [

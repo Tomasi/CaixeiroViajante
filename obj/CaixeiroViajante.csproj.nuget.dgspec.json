@@ -47,6 +47,10 @@
             "EPPlus": {
               "target": "Package",
               "version": "[6.2.5, )"
+            },
+            "GeneticSharp": {
+              "target": "Package",
+              "version": "[3.1.4, )"
             }
           },
           "imports": [
