@@ -1,62 +1,82 @@
-﻿using OfficeOpenXml;
+﻿using GeneticSharp;
+using OfficeOpenXml;
+using TSP;
 
-string filePath = "Viagens.xlsx";
+string filePath = "Coordenadas.xlsx";
 
 using (var package = new ExcelPackage(new FileInfo(filePath)))
 {
-    ExcelPackage.LicenseContext = LicenseContext.NonCommercial; // Definindo o contexto de licença
-    ExcelWorksheet worksheet = package.Workbook.Worksheets[0]; // Seleciona a primeira planilha
+    ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+    ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
 
     int rowCount = worksheet.Dimension.Rows;
     int colCount = worksheet.Dimension.Columns;
 
-    List<Viagem> viagens = new List<Viagem> { };
-    List<string> cidadesDestino = new List<string> { };
+    List<Cidade> cidades = new List<Cidade> { };
 
     for (int row = 1; row <= rowCount; row++)
     {
 
-        string cidadeOrigem = "";
+        string nomeCidade = "";
+        decimal latitude = 0;
+        decimal longitude = 0;
 
         for (int col = 1; col <= colCount; col++)
         {
 
             string? cellValue = worksheet.Cells[row, col].Value?.ToString();
 
-            if (row == 1)
-            {
-
-                if (cellValue != "" && cellValue != null)
-                {
-                    cidadesDestino.Add(cellValue);
-                }
-                else
-                {
-                    cidadesDestino.Add(string.Empty);
-                }
-
-                continue;
-            }
-
-            string cidadeDestino = cidadesDestino[col - 1];
-            decimal distancia = 0;
-
             if (col == 1 && cellValue != "" && cellValue != null)
             {
-                cidadeOrigem = cellValue;
-                continue;
+                nomeCidade = cellValue;
             }
-            else
+            else if (col == 2 && cellValue != "" && cellValue != null)
             {
-                decimal.TryParse(cellValue, out distancia);
+                decimal.TryParse(cellValue, out latitude);
+            }
+            else if (col == 3 && cellValue != "" && cellValue != null)
+            {
+                decimal.TryParse(cellValue, out longitude);
             }
 
-            Viagem viagem = new Viagem(cidadeOrigem, cidadeDestino, distancia);
-            viagens.Add(viagem);
         }
 
+        Cidade cidade = new Cidade(nomeCidade, latitude, longitude);
+        cidades.Add(cidade);
     }
 
-    viagens.ForEach(x => Console.WriteLine($"Viagem de {x.CidadeOrigem} para {x.CidadeDestino} com distância {x.Distancia}"));
+    var selection = new EliteSelection();
+    var crossover = new UniformCrossover();
+    var mutation = new UniformMutation(true);
+    int numberOfCities = cidades.Count;
+    Fitness fitness = new Fitness(cidades, numberOfCities);
+    TspChromosome tspChromosome = new TspChromosome(numberOfCities);
 
+    var population = new Population(50, 70, tspChromosome);
+
+    var ga = new GeneticAlgorithm(population, fitness, selection, crossover, mutation);
+    ga.Termination = new FitnessStagnationTermination(100);
+    ga.GenerationRan += (s, e) => Console.WriteLine($"Generation {ga.GenerationsNumber}. Best fitness: {ga.BestChromosome.Fitness.Value}");
+
+    Console.WriteLine("GA running...");
+    ga.Start();
+
+    Console.WriteLine();
+    Console.WriteLine($"Best solution found has fitness: {ga.BestChromosome.Fitness}");
+    Console.WriteLine($"Elapsed time: {ga.TimeEvolving}");
+
+    var bestSolution = ga.BestChromosome;
+    var genes = bestSolution.GetGenes();
+    List<Cidade> bestRoute = new List<Cidade>();
+
+    foreach (var gene in genes)
+    {
+        int cityIndex = Convert.ToInt32(gene.Value);
+        Cidade city = fitness.Cidades[cityIndex];
+        bestRoute.Add(city);
+    }
+
+    Console.WriteLine();
+    Console.WriteLine("A melhor rota calculada para o caixeiro viajante é: ");
+    bestRoute.ForEach(x => Console.WriteLine($"{x.Nome}"));
 }
