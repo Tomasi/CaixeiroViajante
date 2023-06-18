@@ -14,19 +14,26 @@ namespace TSP
 
         public Fitness(List<Cidade> cidades, int qtdCidades)
         {
-            Cidades = new List<Cidade>(qtdCidades);
+            this.Cidades = new List<Cidade>(qtdCidades);
             MinX = cidades.Min(x => x.latitude);
             MinY = cidades.Min(x => x.longitude);
             MaxX = cidades.Max(x => x.latitude);
             MaxY = cidades.Min(x => x.longitude);
 
+            if (MaxX >= int.MaxValue)
+            {
+                throw new ArgumentOutOfRangeException(nameof(MaxX));
+            }
+
+            if (MaxY >= int.MaxValue)
+            {
+                throw new ArgumentOutOfRangeException(nameof(MaxY));
+            }
+
             for (int i = 0; i < qtdCidades; i++)
             {
-                var city = new Cidade(cidades[i].Nome,
-                    (decimal)RandomizationProvider.Current.GetDouble(((double)MinX),
-                    ((double)MaxX) + 1), (decimal)RandomizationProvider.Current.GetDouble(((double)MinY), ((double)MaxY) + 1));
-
-                Cidades.Add(city);
+                var city = new Cidade(cidades[i].Nome, (decimal)RandomizationProvider.Current.GetDouble(((double)MinX), ((double)MaxX) + 1), (decimal)RandomizationProvider.Current.GetDouble(((double)MinY), ((double)MaxY) + 1));
+                this.Cidades.Add(city);
             }
         }
 
@@ -34,8 +41,7 @@ namespace TSP
         {
             var genes = chromosome.GetGenes();
             var distanceSum = 0.0;
-            var lastCityIndex = 0;
-            // var lastCityIndex = Convert.ToInt32(genes[0].Value, CultureInfo.InvariantCulture);
+            var lastCityIndex = Convert.ToInt32(genes[0].Value, CultureInfo.InvariantCulture);
             var citiesIndexes = new List<int>
             {
                 lastCityIndex
@@ -50,7 +56,7 @@ namespace TSP
                 citiesIndexes.Add(lastCityIndex);
             }
 
-            distanceSum += CalcDistanceTwoCities(Cidades[0], Cidades[lastCityIndex]);
+            distanceSum += CalcDistanceTwoCities(Cidades[citiesIndexes.Last()], Cidades[citiesIndexes.First()]);
 
             var fitness = 1.0 - (distanceSum / (Cidades.Count * 1000.0));
 
@@ -71,6 +77,7 @@ namespace TSP
 
             return fitness;
         }
+
         private static double CalcDistanceTwoCities(Cidade one, Cidade two)
         {
             return Math.Sqrt(Math.Pow((double)two.latitude - (double)one.latitude, 2) +

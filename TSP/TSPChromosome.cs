@@ -11,9 +11,11 @@ namespace TSP
         public TspChromosome(int numberOfCities) : base(numberOfCities)
         {
             m_numberOfCities = numberOfCities;
+
+            // Create a list of city indexes excluding the index of Brasilia (0)
             var citiesIndexes = RandomizationProvider.Current.GetUniqueInts(numberOfCities - 1, 1, numberOfCities).ToList();
 
-            citiesIndexes.Insert(0, 0); // Insert Brasilia (city index 0) at the beginning
+            citiesIndexes.Insert(0, 0);
 
             for (int i = 0; i < numberOfCities; i++)
             {
@@ -25,7 +27,7 @@ namespace TSP
 
         public override Gene GenerateGene(int geneIndex)
         {
-            return new Gene(RandomizationProvider.Current.GetInt(0, m_numberOfCities));
+            return new Gene(RandomizationProvider.Current.GetInt(1, m_numberOfCities));
         }
 
         public override IChromosome CreateNew()

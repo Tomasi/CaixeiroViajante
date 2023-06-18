@@ -41,13 +41,17 @@ using (var package = new ExcelPackage(new FileInfo(filePath)))
 
         }
 
-        Cidade cidade = new Cidade(nomeCidade, latitude, longitude);
-        cidades.Add(cidade);
+        if (!String.IsNullOrWhiteSpace(nomeCidade))
+        {
+            Cidade cidade = new Cidade(nomeCidade, latitude, longitude);
+            cidades.Add(cidade);
+        }
+
     }
 
     var selection = new EliteSelection();
-    var crossover = new UniformCrossover();
-    var mutation = new UniformMutation(true);
+    var crossover = new UniformCrossover(0);
+    var mutation = new UniformMutation(false);
     int numberOfCities = cidades.Count;
     Fitness fitness = new Fitness(cidades, numberOfCities);
     TspChromosome tspChromosome = new TspChromosome(numberOfCities);
@@ -62,8 +66,8 @@ using (var package = new ExcelPackage(new FileInfo(filePath)))
     ga.Start();
 
     Console.WriteLine();
-    Console.WriteLine($"Best solution found has fitness: {ga.BestChromosome.Fitness}");
-    Console.WriteLine($"Elapsed time: {ga.TimeEvolving}");
+    Console.WriteLine($"Melhor solução encontrada: {ga.BestChromosome.Fitness}");
+    Console.WriteLine($"Tempo de execução: {ga.TimeEvolving}");
 
     var bestSolution = ga.BestChromosome;
     var genes = bestSolution.GetGenes();
@@ -78,5 +82,9 @@ using (var package = new ExcelPackage(new FileInfo(filePath)))
 
     Console.WriteLine();
     Console.WriteLine("A melhor rota calculada para o caixeiro viajante é: ");
-    bestRoute.ForEach(x => Console.WriteLine($"{x.Nome}"));
+
+    for (int i = 0; i < bestRoute.Count; i++)
+    {
+        Console.WriteLine($"{i + 1}: {bestRoute[i].Nome}");
+    }
 }
