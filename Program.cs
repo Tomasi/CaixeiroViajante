@@ -50,13 +50,13 @@ using (var package = new ExcelPackage(new FileInfo(filePath)))
     }
 
     var selection = new EliteSelection();
-    var crossover = new UniformCrossover(0);
+    var crossover = new UniformCrossover(1.0f);
     var mutation = new UniformMutation(false);
     int numberOfCities = cidades.Count;
     Fitness fitness = new Fitness(cidades, numberOfCities);
     TspChromosome tspChromosome = new TspChromosome(numberOfCities);
 
-    var population = new Population(50, 70, tspChromosome);
+    var population = new Population(50, 100, tspChromosome);
 
     var ga = new GeneticAlgorithm(population, fitness, selection, crossover, mutation);
     ga.Termination = new FitnessStagnationTermination(100);
@@ -85,6 +85,6 @@ using (var package = new ExcelPackage(new FileInfo(filePath)))
 
     for (int i = 0; i < bestRoute.Count; i++)
     {
-        Console.WriteLine($"{i + 1}: {bestRoute[i].Nome}");
+        Console.WriteLine($"{i + 1}: {bestRoute[i].Nome} - latitude {bestRoute[i].latitude} - longitude {bestRoute[i].longitude}");
     }
 }

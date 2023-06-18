@@ -13,9 +13,10 @@ namespace TSP
             m_numberOfCities = numberOfCities;
 
             // Create a list of city indexes excluding the index of Brasilia (0)
-            var citiesIndexes = RandomizationProvider.Current.GetUniqueInts(numberOfCities - 1, 1, numberOfCities).ToList();
+            var citiesIndexes = RandomizationProvider.Current.GetUniqueInts(numberOfCities - 2, 1, numberOfCities).ToList();
 
             citiesIndexes.Insert(0, 0);
+            citiesIndexes.Insert(17, 17);
 
             for (int i = 0; i < numberOfCities; i++)
             {

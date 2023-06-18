@@ -32,7 +32,7 @@ namespace TSP
 
             for (int i = 0; i < qtdCidades; i++)
             {
-                var city = new Cidade(cidades[i].Nome, (decimal)RandomizationProvider.Current.GetDouble(((double)MinX), ((double)MaxX) + 1), (decimal)RandomizationProvider.Current.GetDouble(((double)MinY), ((double)MaxY) + 1));
+                var city = new Cidade(cidades[i].Nome, cidades[i].latitude, cidades[i].longitude);
                 this.Cidades.Add(city);
             }
         }
