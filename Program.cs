@@ -60,7 +60,7 @@ using (var package = new ExcelPackage(new FileInfo(filePath)))
 
     var ga = new GeneticAlgorithm(population, fitness, selection, crossover, mutation);
     ga.Termination = new FitnessStagnationTermination(100);
-    ga.GenerationRan += (s, e) => Console.WriteLine($"Generation {ga.GenerationsNumber}. Best fitness: {ga.BestChromosome.Fitness.Value}");
+    // ga.GenerationRan += (s, e) => Console.WriteLine($"Generation {ga.GenerationsNumber}. Best fitness: {ga.BestChromosome.Fitness.Value}");
 
     Console.WriteLine("GA running...");
     ga.Start();
@@ -69,9 +69,12 @@ using (var package = new ExcelPackage(new FileInfo(filePath)))
     Console.WriteLine($"Melhor solução encontrada: {ga.BestChromosome.Fitness}");
     Console.WriteLine($"Tempo de execução: {ga.TimeEvolving}");
 
+    TabuSearch.TabuSearch tabuSearch = new TabuSearch.TabuSearch(cidades);
+
     var bestSolution = ga.BestChromosome;
     var genes = bestSolution.GetGenes();
     List<Cidade> bestRoute = new List<Cidade>();
+    List<Cidade> buscaTabu = tabuSearch.Search();
 
     foreach (var gene in genes)
     {
@@ -81,10 +84,18 @@ using (var package = new ExcelPackage(new FileInfo(filePath)))
     }
 
     Console.WriteLine();
-    Console.WriteLine("A melhor rota calculada para o caixeiro viajante é: ");
+    Console.WriteLine("A melhor rota calculada para o caixeiro viajante usando o algoritmo genético é: ");
 
     for (int i = 0; i < bestRoute.Count; i++)
     {
         Console.WriteLine($"{i + 1}: {bestRoute[i].Nome} - latitude {bestRoute[i].latitude} - longitude {bestRoute[i].longitude}");
+    }
+
+    Console.WriteLine();
+    Console.WriteLine("A melhor rota calculada para o caixeiro viajante usando a busca tabu é: ");
+
+    for (int i = 0; i < buscaTabu.Count; i++)
+    {
+        Console.WriteLine($"{i + 1}: {buscaTabu[i].Nome} - latitude {buscaTabu[i].latitude} - longitude {buscaTabu[i].longitude}");
     }
 }
