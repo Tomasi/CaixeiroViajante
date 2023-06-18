@@ -1,6 +1,6 @@
 ﻿using GeneticSharp;
 using OfficeOpenXml;
-using TSP;
+using Genetico;
 
 string filePath = "Coordenadas.xlsx";
 

@@ -1,7 +1,7 @@
 using System.Globalization;
 using GeneticSharp;
 
-namespace TSP
+namespace Genetico
 {
 
     public class Fitness : IFitness

@@ -1,7 +1,7 @@
 using System;
 using GeneticSharp;
 
-namespace TSP
+namespace Genetico
 {
     [Serializable]
     public class TspChromosome : ChromosomeBase
