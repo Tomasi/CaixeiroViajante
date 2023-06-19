@@ -46,12 +46,8 @@ Para resolver o problema do caixeiro viajante utilizando as heurísticas de busc
 1. **Experimento 1 - Busca Tabu**:
    - Executaremos a busca tabu para o conjunto de cidades fornecido, utilizando um determinado número de iterações (100).
    - Mediremos o tempo de execução da busca tabu para encontrar a solução.
-   - Calcularemos a distância total percorrida pela rota encontrada pela busca tabu.
-   - Compararemos a distância total percorrida com soluções conhecidas, se disponíveis, para avaliar a qualidade da solução encontrada.
 
 2. **Experimento 2 - Algoritmo Genético**:
    - Implementaremos o algoritmo genético para o conjunto de cidades fornecido, definindo os parâmetros como tamanho da população (Min 50; Max: 100), número de gerações e taxa de mutação.
    - Executaremos o algoritmo genético para obter uma solução aproximada.
    - Registraremos o tempo de execução necessário para encontrar a solução.
-   - Calcularemos a distância total percorrida pela rota encontrada pelo algoritmo genético.
-   - Compararemos a distância total percorrida com soluções conhecidas, se disponíveis, para avaliar a qualidade da solução encontrada.
