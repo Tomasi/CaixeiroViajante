@@ -9,6 +9,8 @@ namespace TabuSearch
         private const int TabuSize = 17;
         private const int MaxIterations = 100;
 
+        public TimeSpan TempoDeExecucao;
+
         private List<Cidade> tabuList;
         private List<Cidade> cities;
 
@@ -20,24 +22,36 @@ namespace TabuSearch
 
         public List<Cidade> Search()
         {
+            DateTime inicial = DateTime.Now;
+            DateTime final;
             List<Cidade> bestSolution = new List<Cidade>(cities);
-
-            for (int i = 0; i < MaxIterations; i++)
+            try
             {
-                List<Cidade> currentSolution = GetBestNeighbor(bestSolution);
 
-                if (CalculateTotalDistance(currentSolution) < CalculateTotalDistance(bestSolution))
+                for (int i = 0; i < MaxIterations; i++)
                 {
-                    bestSolution = currentSolution;
+                    List<Cidade> currentSolution = GetBestNeighbor(bestSolution);
+
+                    if (CalculateTotalDistance(currentSolution) < CalculateTotalDistance(bestSolution))
+                    {
+                        bestSolution = currentSolution;
+                    }
+
+                    tabuList.Add(currentSolution.Last());
+
+                    if (tabuList.Count > TabuSize)
+                    {
+                        tabuList.RemoveAt(0);
+                    }
                 }
 
-                tabuList.Add(currentSolution.Last());
-
-                if (tabuList.Count > TabuSize)
-                {
-                    tabuList.RemoveAt(0);
-                }
             }
+            finally
+            {
+                final = DateTime.Now;
+            }
+
+            this.TempoDeExecucao = final.TimeOfDay - inicial.TimeOfDay;
 
             return bestSolution;
         }

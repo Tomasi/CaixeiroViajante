@@ -66,8 +66,9 @@ using (var package = new ExcelPackage(new FileInfo(filePath)))
     ga.Start();
 
     Console.WriteLine();
-    Console.WriteLine($"Melhor solução encontrada: {ga.BestChromosome.Fitness}");
-    Console.WriteLine($"Tempo de execução: {ga.TimeEvolving}");
+    Console.WriteLine($"Melhor solução encontrada algotimo genético: {ga.BestChromosome.Fitness}");
+    Console.WriteLine($"Tempo de execução algoritmo genético: {ga.TimeEvolving}");
+    Console.WriteLine($"Número de gerações {ga.GenerationsNumber}");
 
     TabuSearch.TabuSearch tabuSearch = new TabuSearch.TabuSearch(cidades);
 
@@ -92,6 +93,7 @@ using (var package = new ExcelPackage(new FileInfo(filePath)))
     }
 
     Console.WriteLine();
+    Console.WriteLine($"Tempo de execução da busca tabu: {tabuSearch.TempoDeExecucao}");
     Console.WriteLine("A melhor rota calculada para o caixeiro viajante usando a busca tabu é: ");
 
     for (int i = 0; i < buscaTabu.Count; i++)
