@@ -55,11 +55,10 @@ Para resolver o problema do caixeiro viajante utilizando as heurísticas de busc
   
      ## Resultados
   
-     1 - Algortimo Genético
-     ![image](https://github.com/Tomasi/CaixeiroViajante/assets/61890715/1ae838cc-2199-47be-a80f-f62eca23bd68)
-
-    2 - Tabu
-     ![image](https://github.com/Tomasi/CaixeiroViajante/assets/61890715/77e8526d-02e6-41d2-883b-7f9ab50c5c32)
+1 - Algortimo Genético
+![image](https://github.com/Tomasi/CaixeiroViajante/assets/61890715/1ae838cc-2199-47be-a80f-f62eca23bd68)  
+2 - Tabu
+![image](https://github.com/Tomasi/CaixeiroViajante/assets/61890715/77e8526d-02e6-41d2-883b-7f9ab50c5c32)
 
 
      
