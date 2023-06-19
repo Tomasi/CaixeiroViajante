@@ -31,27 +31,36 @@ Para resolver o problema do caixeiro viajante utilizando as heurísticas de busc
 
 1. **Definição das cidades e coordenadas**: Utilizaremos as cidades fornecidas como entrada de dados, juntamente com suas coordenadas de latitude e longitude. Essas informações serão utilizadas para calcular as distâncias entre as cidades e construir a matriz de distâncias.
 
-2. **Implementação da busca tabu**: Faremos a implementação da busca tabu em C#, considerando as coordenadas de latitude e longitude. A busca tabu será responsável por explorar o espaço de solução, realizando movimentos entre as cidades e mantendo uma memória de curto prazo para evitar soluções repetidas. A busca tabu buscará minimizar a distância total percorrida.
+2. **Implementação da busca tabu**: Faremos a implementação da busca tabu em C#, considerando as coordenadas de latitude e longitude. A busca tabu será responsável por explorar o espaço de solução, realizando movimentos entre as cidades e mantendo uma memória de curto prazo para evitar soluções repetidas.
 
-3. **Avaliação da busca tabu**: Executaremos a busca tabu para encontrar uma solução aproximada para o problema do caixeiro viajante. Avaliaremos o desempenho da busca tabu em termos de tempo de execução e qualidade da solução encontrada. Mediremos a distância total percorrida pela rota encontrada e compararemos com soluções conhecidas, quando disponíveis.
+3. **Avaliação da busca tabu**: Executaremos a busca tabu para encontrar uma solução aproximada para o problema do caixeiro viajante. Avaliaremos o desempenho da busca tabu em termos de tempo de execução e qualidade da solução encontrada.
 
 4. **Implementação do algoritmo genético**: Realizaremos a implementação do algoritmo genético em C#, levando em consideração as coordenadas de latitude e longitude das cidades. O algoritmo genético criará uma população inicial de rotas, combinando e mutando soluções ao longo de várias gerações para encontrar rotas mais curtas e de melhor qualidade.
 
-5. **Avaliação do algoritmo genético**: Executaremos o algoritmo genético para obter soluções aproximadas para o problema do caixeiro viajante. Avaliaremos o desempenho do algoritmo genético em relação ao tempo de execução e qualidade da solução obtida. Mediremos a distância total percorrida pela rota encontrada e compararemos com soluções conhecidas, quando disponíveis.
+5. **Avaliação do algoritmo genético**: Executaremos o algoritmo genético para obter soluções aproximadas para o problema do caixeiro viajante. Avaliaremos o desempenho do algoritmo genético em relação ao tempo de execução e qualidade da solução obtida.
 
-6. **Comparação e análise**: Compararemos os resultados obtidos pela busca tabu e pelo algoritmo genético. Analisaremos o desempenho de cada heurística em relação ao tempo de execução e qualidade da solução encontrada. Observaremos se as soluções encontradas são próximas da solução ótima conhecida, quando disponível.
+6. **Comparação e análise**: Compararemos os resultados obtidos pela busca tabu e pelo algoritmo genético. Analisaremos o desempenho de cada heurística em relação ao tempo de execução e qualidade da solução encontrada.
 
 ## Experimentos
 
 1. **Experimento 1 - Busca Tabu**:
    - Executaremos a busca tabu para o conjunto de cidades fornecido, utilizando um determinado número de iterações (100).
    - Mediremos o tempo de execução da busca tabu para encontrar a solução.
-   - Calcularemos a distância total percorrida pela rota encontrada pela busca tabu.
-   - Compararemos a distância total percorrida com soluções conhecidas, se disponíveis, para avaliar a qualidade da solução encontrada.
 
 2. **Experimento 2 - Algoritmo Genético**:
    - Implementaremos o algoritmo genético para o conjunto de cidades fornecido, definindo os parâmetros como tamanho da população (Min 50; Max: 100), número de gerações e taxa de mutação.
    - Executaremos o algoritmo genético para obter uma solução aproximada.
    - Registraremos o tempo de execução necessário para encontrar a solução.
-   - Calcularemos a distância total percorrida pela rota encontrada pelo algoritmo genético.
-   - Compararemos a distância total percorrida com soluções conhecidas, se disponíveis, para avaliar a qualidade da solução encontrada.
+   - Usando a biblioteca GeneticSharp.
+  
+     ## Resultados
+  
+1 - Algortimo Genético
+![image](https://github.com/Tomasi/CaixeiroViajante/assets/61890715/1ae838cc-2199-47be-a80f-f62eca23bd68)  
+2 - Tabu
+![image](https://github.com/Tomasi/CaixeiroViajante/assets/61890715/77e8526d-02e6-41d2-883b-7f9ab50c5c32)
+
+
+     
+
+   
