@@ -51,3 +51,17 @@ Para resolver o problema do caixeiro viajante utilizando as heurísticas de busc
    - Implementaremos o algoritmo genético para o conjunto de cidades fornecido, definindo os parâmetros como tamanho da população (Min 50; Max: 100), número de gerações e taxa de mutação.
    - Executaremos o algoritmo genético para obter uma solução aproximada.
    - Registraremos o tempo de execução necessário para encontrar a solução.
+   - Usando a biblioteca GeneticSharp.
+  
+     ## Resultados
+  
+     1 - Algortimo Genético
+     ![image](https://github.com/Tomasi/CaixeiroViajante/assets/61890715/1ae838cc-2199-47be-a80f-f62eca23bd68)
+
+    2 - Tabu
+     ![image](https://github.com/Tomasi/CaixeiroViajante/assets/61890715/77e8526d-02e6-41d2-883b-7f9ab50c5c32)
+
+
+     
+
+   
